@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,9 +30,21 @@
    <style type="text/css">
    .bxslider img
    {
-		max-width:100%;
+		/*max-width:100%;*/
+    
 		max-height:100%;  
    }
+   /*.height{
+    height:40px;
+    clear:both;
+   }
+*/   #change{
+    font-color:blue;
+   }
+  .icon-bar{
+    background-color:#e4007d ;
+
+  } 
    
    </style>
     <!-- Navigation -->
@@ -43,12 +56,20 @@
 
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                                <i class="fa fa-bars"></i>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <!-- <i class="fa fa-bars"></i> -->
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
                             </button>
+
+                            <a href="" class="navbar-brand">Nicky karki</a>
                         </div>
+
+                        
+                    
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="menu">
+                        <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="#intro">Home</a></li>
                                 <li><a href="#about">About Me</a></li>
@@ -67,24 +88,30 @@
     </div>
     <!-- /Navigation -->
     <!-- Section: intro -->
+    <div class="height">
     <section id="intro" class="intro">
         <div class="slogan">
 			<ul class="bxslider">
-				<li><img src="img/bg1.jpg"    /></li>
-				<li><img src="img/gallery/2.jpg"  /></li>
-				<li><img src="img/gallery/3.jpg" /></li>
+				<li><img src="img/bg1.jpg" /></li>
+                <li><img src="img/gallery/c1.jpg"  /></li>
+                <li><img src="img/gallery/c2.jpg"  /></li>
+				<li><img src="img/gallery/n2.jpg"  /></li>
+				<li><img src="img/gallery/n4.jpg" /></li>
+                <li><img src="img/gallery/n6.jpg" /></li>
+                <li><img src="img/gallery/n8.jpg" /></li>
 				
 			</ul>			 
 		</div>
-		 <!-- <div class="page-scroll">
+		 <div class="page-scroll">
 			<a href="#about">
 				<i class="fa fa-angle-down fa-5x animated"></i>
 			</a>
-		</div> -->
+		</div>
             
         
           
     </section>
+</div>
     <!-- /Section: intro -->
 
    
@@ -97,7 +124,7 @@
 
                     <div class="section-heading text-center">
                         <div class="wow bounceInDown" data-wow-delay="0.2s">
-                            <h2>My name is Nicky</h2>
+                            <h2 id="change">My name is Nicky</h2>
                         </div>
                         <p class="wow bounceInUp" data-wow-delay="0.3s"> :)</p>
                     </div>
@@ -286,6 +313,7 @@
         </div>
     </section>
     <!-- Section: contact -->
+      <?=$thankYou ?>
     <section id="contact" class="home-section text-center">
         <div class="heading-contact">
             <div class="container">
@@ -400,6 +428,24 @@
     });
    
     </script>
+ <!--    <?php
+
+if($_POST["submit"]) {
+    $recipient="your@email.address";
+    $subject="Form to email message";
+    $sender=$_POST["sender"];
+    $senderEmail=$_POST["senderEmail"];
+    $message=$_POST["message"];
+
+    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+
+    $thankYou="<p>Thank you! Your message has been sent.</p>";
+}
+
+?> -->
+
 </body>
 
 </html>
